@@ -1,0 +1,26 @@
+parm complex_sol.prmtop
+trajin complex_sol.inpcrd
+trajin prod1.mdcrd
+trajin prod2.mdcrd
+trajin prod3.mdcrd
+trajin prod4.mdcrd
+trajin prod5.mdcrd
+trajin prod6.mdcrd
+trajin prod7.mdcrd
+trajin prod8.mdcrd
+trajin prod9.mdcrd
+trajin prod10.mdcrd
+trajin prod11.mdcrd
+trajin prod12.mdcrd
+trajin prod13.mdcrd
+trajin prod14.mdcrd
+trajin prod15.mdcrd
+trajin prod16.mdcrd
+trajin prod17.mdcrd
+trajin prod18.mdcrd
+trajin prod19.mdcrd
+trajin prod20.mdcrd
+strip :WAT,Na+,Cl-
+trajout 1000_L_osimertinib.pdb
+run
+exit
