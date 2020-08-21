@@ -47,9 +47,14 @@ legend("bottomright",
 
 
 # Principal Component Analysis (PCA)
-pc <- pca.xyz(xyz[,ca.inds3$xyz])
+pc <- pca.xyz(xyz3[,ca.inds2$xyz])
 # Plot PCA
-plot(pc, col=bwr.colors(nrow(xyz)))
+plot(pc, col=bwr.colors(nrow(xyz3)))
+# Simple clustering in PC subspace
+hc <- hclust(dist(pc$z[,1:6]))
+grps <- cutree(hc, k=6)
+# Plot clustering in PC subspace
+plot(pc, col=grps)
 
 ## Contact map ##
 ca.inds <- atom.select(WT, "calpha")
@@ -61,7 +66,7 @@ plot.cmap(ref.cont, ylab="Residue Position", xlab="Residue Position", main ="Con
 count3
 ref.cont
 sum.cont <- NULL 
-for(i in 1:nrow(dw7_avg)) {
+for(i in 1:nrow(a)) {
   ## Contact map for frame 'i' 
   cont <- cmap(dw7[i,inds$xyz], dcut=6, scut=3)
   ## Product with reference 
